@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_template_simple/core/extensions/role_manager.dart';
-import 'package:flutter_template_simple/view/home/view/home_view.dart';
-import 'package:flutter_template_simple/view/login/model/login_model.dart';
-import 'package:flutter_template_simple/view/login/service/login_service.dart';
+//import 'package:MSapp/core/extensions/role_manager.dart';
+import 'package:MSapp/view/home/view/home_view.dart';
+import 'package:MSapp/view/login/model/login_model.dart';
+import 'package:MSapp/view/login/service/login_service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 

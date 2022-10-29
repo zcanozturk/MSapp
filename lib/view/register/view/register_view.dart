@@ -1,19 +1,20 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/material.dart';
-import 'package:MSapp/core/network/vexana_manager.dart';
-import 'package:MSapp/view/home/model/home_model.dart';
-import 'package:MSapp/view/home/service/home_service.dart';
-import 'package:MSapp/view/home/viewmodel/home_view_model.dart';
+import 'package:flutter/material.dart'; 
 import 'package:get/get.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+import '../../../core/network/vexana_manager.dart';
+import '../model/register_model.dart';
+import '../service/register_service.dart';
+import '../viewmodel/register_view_model.dart';
+
+class registerView extends StatelessWidget {
+  registerView({Key? key}) : super(key: key);
   final ctrl = Get.put(
-      HomeViewModel(HomeService(VexanaManager.instance.networkManager)));
+      registerViewModel(registerService(VexanaManager.instance.networkManager)));
 
   @override
   Widget build(BuildContext context) {
-    ctrl.getHomeItems();
+    ctrl.getregisterItems();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         tooltip: 'sun',
@@ -33,14 +34,16 @@ class HomeView extends StatelessWidget {
               onPressed: () {
                 ctrl.counter.value = 0;
                 Get.snackbar('DELETED', 'You have cleared counter !',
-                    colorText: Colors.white, backgroundColor: Colors.green);
+                colorText: Colors.white,
+                backgroundColor:Colors.green
+                );
               },
               child: Icon(Icons.clear))
         ],
         centerTitle: true,
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        title: Text('Home'),
+        title: Text('register'),
       ),
       body: getObservableBody(context),
     );
@@ -60,15 +63,14 @@ class HomeView extends StatelessWidget {
 
   buildListBuilder() {
     var refreshKey = GlobalKey<RefreshIndicatorState>();
-    return Container(
-        // if there is another thing above or below list yo should make this expanded to fit .
+    return Container( // if there is another thing above or below list yo should make this expanded to fit .
         color: Colors.black,
         alignment: Alignment.center,
         height: Get.height,
-        child: ctrl.homeList.isEmpty
+        child: ctrl.registerList.isEmpty
             ? RefreshIndicator(
                 onRefresh: () async {
-                  await ctrl.getHomeItems();
+                  await ctrl.getregisterItems();
                 },
                 child: Stack(
                   children: <Widget>[
@@ -86,7 +88,7 @@ class HomeView extends StatelessWidget {
             : RefreshIndicator(
                 key: refreshKey,
                 onRefresh: () async {
-                  await ctrl.getHomeItems();
+                  await ctrl.getregisterItems();
                 },
                 child: Scrollbar(
                   interactive: true,
@@ -95,16 +97,16 @@ class HomeView extends StatelessWidget {
                   thickness: Get.width * 0.02,
                   child: ListView.builder(
                       physics: BouncingScrollPhysics(),
-                      itemCount: ctrl.homeList.length,
+                      itemCount: ctrl.registerList.length,
                       itemBuilder: (context, index) {
-                        var model = ctrl.homeList[index];
+                        var model = ctrl.registerList[index];
                         return getCardListWidget(context, model);
                       }),
                 ),
               ));
   }
 
-  Widget getCardListWidget(BuildContext context, HomeModel model) {
+  Widget getCardListWidget(BuildContext context, registerModel model) {
     return Card(
       child: Column(
         children: <Widget>[

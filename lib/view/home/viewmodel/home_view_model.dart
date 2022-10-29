@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template_simple/view/home/model/home_model.dart';
-import 'package:flutter_template_simple/view/home/service/home_service.dart';
+import 'package:MSapp/view/home/model/home_model.dart';
+import 'package:MSapp/view/home/service/home_service.dart';
 import 'package:get/get.dart';
 
 class HomeViewModel extends GetxController {
@@ -10,7 +10,6 @@ class HomeViewModel extends GetxController {
   var counter = 0.obs;
   var isLoading = false.obs;
   var homeList = <HomeModel>[].obs;
-  
 
   void increaseCounter() => counter++;
 
@@ -26,7 +25,10 @@ class HomeViewModel extends GetxController {
     //this response handle algo can be better than
     if (response.isNotEmpty) {
       homeList.value = response;
-      Get.snackbar("Success", 'You have items !',);
+      Get.snackbar(
+        "Success",
+        'You have items !',
+      );
     } else {
       Get.snackbar('Error', 'Some errors happened OR There is no item !');
     }

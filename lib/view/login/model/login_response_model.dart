@@ -1,4 +1,4 @@
-import 'package:flutter_template_simple/view/login/model/login.dart';
+import 'package:MSapp/view/login/model/login.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vexana/vexana.dart';
 
@@ -9,8 +9,8 @@ class LoginResponseModel extends INetworkModel<LoginResponseModel> {
   bool? hasError;
   String? errorMessage;
   Login? responseData;
-  
-  LoginResponseModel({this.hasError , this.errorMessage, this.responseData});
+
+  LoginResponseModel({this.hasError, this.errorMessage, this.responseData});
 
   @override
   LoginResponseModel fromJson(Map<String, dynamic> json) {

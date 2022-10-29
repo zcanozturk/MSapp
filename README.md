@@ -1,6 +1,7 @@
-# flutter_template_simple
+# MSapp
 
 A new Flutter project with GetX and MVVM.
+
 - [Learn GetX](https://pub.dev/packages/get)
 - [Learn GetStorage](https://pub.dev/packages/get_storage)
 
@@ -18,5 +19,6 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## NOTES
- - Add Google OAuth
- - Dynamic Width & Height ? 
+
+- Add Google OAuth
+- Dynamic Width & Height ?

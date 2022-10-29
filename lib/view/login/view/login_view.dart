@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template_simple/core/components/drawer/get_drawer.dart';
-//import 'package:flutter_template_simple/core/components/appbar/app_bar.dart';
-import 'package:flutter_template_simple/core/constants/app/app_constants.dart';
-import 'package:flutter_template_simple/core/network/vexana_manager.dart';
-import 'package:flutter_template_simple/view/login/service/login_service.dart';
-import 'package:flutter_template_simple/view/login/viewmodel/login_view_model.dart';
+import 'package:MSapp/core/components/drawer/get_drawer.dart';
+//import 'package:MSapp/core/components/appbar/app_bar.dart';
+import 'package:MSapp/core/constants/app/app_constants.dart';
+import 'package:MSapp/core/network/vexana_manager.dart';
+import 'package:MSapp/view/login/service/login_service.dart';
+import 'package:MSapp/view/login/viewmodel/login_view_model.dart';
 
 import '../../../../core/extensions/context_extension.dart';
 import 'package:get/get.dart';
